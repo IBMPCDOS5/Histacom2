@@ -48,6 +48,7 @@ namespace Histacom2.OS.Win95.Win95Apps._12padamsViruses
 
         private void classicButton3_Click(object sender, EventArgs e)
         {
+            ResetStartButton();
             ParentForm.Close();
         }
 
@@ -63,6 +64,11 @@ namespace Histacom2.OS.Win95.Win95Apps._12padamsViruses
             Random r = new Random();
             xLocation = r.Next(1, _win.taskbar.Width);
             _win.startbutton.Location = new Point(xLocation, _win.startbutton.Location.Y);
+        }
+
+        private void StartRunner95_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

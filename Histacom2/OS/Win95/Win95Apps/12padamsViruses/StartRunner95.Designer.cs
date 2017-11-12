@@ -97,6 +97,7 @@
             this.Controls.Add(this.label2);
             this.Name = "StartRunner95";
             this.Size = new System.Drawing.Size(383, 208);
+            this.Load += new System.EventHandler(this.StartRunner95_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
