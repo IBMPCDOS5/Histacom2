@@ -35,10 +35,10 @@ namespace Histacom2.OS.Win95
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.taskbar = new System.Windows.Forms.Panel();
+            this.startbutton = new System.Windows.Forms.PictureBox();
             this.clockPanel = new System.Windows.Forms.Panel();
             this.taskbartime = new System.Windows.Forms.Label();
             this.taskbarItems = new System.Windows.Forms.Panel();
-            this.startbutton = new System.Windows.Forms.PictureBox();
             this.startmenu = new System.Windows.Forms.Panel();
             this.startmenuitems = new System.Windows.Forms.MenuStrip();
             this.ProgramsToolStripMenuItem = new Histacom2.Engine.UI.ClassicStartMenuItem();
@@ -113,8 +113,8 @@ namespace Histacom2.OS.Win95
             this.desktopupdate = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.taskbar.SuspendLayout();
-            this.clockPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startbutton)).BeginInit();
+            this.clockPanel.SuspendLayout();
             this.startmenu.SuspendLayout();
             this.startmenuitems.SuspendLayout();
             this.ossidestartmenu.SuspendLayout();
@@ -154,6 +154,16 @@ namespace Histacom2.OS.Win95
             this.taskbar.TabIndex = 2;
             this.taskbar.Paint += new System.Windows.Forms.PaintEventHandler(this.taskbar_Paint);
             // 
+            // startbutton
+            // 
+            this.startbutton.Image = global::Histacom2.Properties.Resources.WinClassicStart;
+            this.startbutton.Location = new System.Drawing.Point(2, 4);
+            this.startbutton.Name = "startbutton";
+            this.startbutton.Size = new System.Drawing.Size(54, 22);
+            this.startbutton.TabIndex = 3;
+            this.startbutton.TabStop = false;
+            this.startbutton.Click += new System.EventHandler(this.startbutton_Click);
+            // 
             // clockPanel
             // 
             this.clockPanel.BackgroundImage = global::Histacom2.Properties.Resources.WinClassicTime;
@@ -184,16 +194,6 @@ namespace Histacom2.OS.Win95
             this.taskbarItems.Name = "taskbarItems";
             this.taskbarItems.Size = new System.Drawing.Size(3648, 22);
             this.taskbarItems.TabIndex = 5;
-            // 
-            // startbutton
-            // 
-            this.startbutton.Image = global::Histacom2.Properties.Resources.WinClassicStart;
-            this.startbutton.Location = new System.Drawing.Point(2, 4);
-            this.startbutton.Name = "startbutton";
-            this.startbutton.Size = new System.Drawing.Size(54, 22);
-            this.startbutton.TabIndex = 3;
-            this.startbutton.TabStop = false;
-            this.startbutton.Click += new System.EventHandler(this.startbutton_Click);
             // 
             // startmenu
             // 
@@ -687,6 +687,7 @@ namespace Histacom2.OS.Win95
             this.StartRunnerToolStripMenuItem.Size = new System.Drawing.Size(181, 28);
             this.StartRunnerToolStripMenuItem.Text = "Start Runner";
             this.StartRunnerToolStripMenuItem.Visible = false;
+            this.StartRunnerToolStripMenuItem.Click += new System.EventHandler(this.StartRunnerToolStripMenuItem_Click);
             // 
             // ErrorBlasterToolStripMenuItem
             // 
@@ -1079,9 +1080,9 @@ namespace Histacom2.OS.Win95
             this.Load += new System.EventHandler(this.Desktop_Load);
             this.panel1.ResumeLayout(false);
             this.taskbar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.startbutton)).EndInit();
             this.clockPanel.ResumeLayout(false);
             this.clockPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startbutton)).EndInit();
             this.startmenu.ResumeLayout(false);
             this.startmenuitems.ResumeLayout(false);
             this.startmenuitems.PerformLayout();

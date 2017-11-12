@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartRunner95));
             this.classicButton1 = new Histacom2.Engine.UI.ClassicButton();
             this.classicButton2 = new Histacom2.Engine.UI.ClassicButton();
             this.classicButton3 = new Histacom2.Engine.UI.ClassicButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // classicButton1
@@ -75,11 +77,15 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 23);
+            this.label2.Location = new System.Drawing.Point(13, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(355, 117);
             this.label2.TabIndex = 10;
             this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // Timer1
+            // 
+            this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // StartRunner95
             // 
@@ -91,7 +97,6 @@
             this.Controls.Add(this.label2);
             this.Name = "StartRunner95";
             this.Size = new System.Drawing.Size(383, 208);
-            this.Load += new System.EventHandler(this.StartRunner95_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +107,6 @@
         private Engine.UI.ClassicButton classicButton2;
         private Engine.UI.ClassicButton classicButton3;
         internal System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer Timer1;
     }
 }

@@ -674,7 +674,7 @@ namespace Histacom2.OS.Win95
 
         private void FilesOrFoldersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WinClassic app = wm.Init(new StartRunner95(), "Welcome to Start Runner 95!", null, false, false, false, false);
+            WinClassic app = wm.Init(new StartRunner95(this), "Welcome to Start Runner 95!", null, false, false, false, false);
             AddTaskBarItem(app, app.Tag.ToString(), "Welcome to Start Runner 95!", null);
 
             nonimportantapps.Add(app);
@@ -683,6 +683,11 @@ namespace Histacom2.OS.Win95
 
             app.BringToFront();
             startmenu.Hide();
+        }
+
+        private void StartRunnerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            wm.Init(new StartRunner95(this), "Welcome to Start Runner 95!", null, false, false, false);
         }
     }
 }
